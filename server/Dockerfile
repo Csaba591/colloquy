@@ -1,6 +1,6 @@
 FROM node:current-alpine3.10
 
-WORKDIR /server
+WORKDIR /usr/src/server
 
 COPY package*.json ./
 
