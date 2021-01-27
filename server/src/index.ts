@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import mongoose from 'mongoose';
 import * as dotenv from 'dotenv';
 import {
@@ -7,6 +8,8 @@ import {
 import bodyParser from 'body-parser';
 
 const app = express();
+app.use(cors());
+
 dotenv.config();
 
 const dbUri = `mongodb://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PW}@localhost:${process.env.MONGO_DB_PORT}/listify`;

@@ -1,10 +1,14 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 const PlaylistSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
     },
+    songs: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Song'
+    }],
     dateCreated: {
         type: Date,
         default: Date.now
